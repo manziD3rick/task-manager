@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #2d3748;
+}
+
+.app {
+  max-width: 600px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* ── Task Form ── */
+.task-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.task-form input:focus {
+  border-color: #4299e1;
+}
+
+.task-form button {
+  padding: 10px 20px;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background: #3182ce;
+}
+
+/* ── Task List ── */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-list p {
+  text-align: center;
+  color: #a0aec0;
+  margin-top: 32px;
+}
+
+/* ── Task Item ── */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 14px 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.task-item input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #48bb78;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.task-item span.done {
+  text-decoration: line-through;
+  color: #a0aec0;
+}
+
+.task-edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #4299e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.task-item button {
+  padding: 6px 12px;
+  background: #fc8181;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.task-item button:hover {
+  background: #f56565;
+}
+
+.task-item .btn-edit {
+  background: #68d391;
+}
+
+.task-item .btn-edit:hover {
+  background: #48bb78;
+}
+
+.task-item .btn-save {
+  background: #4299e1;
+}
+
+.task-item .btn-save:hover {
+  background: #3182ce;
+}
+
+.task-item .btn-cancel {
+  background: #cbd5e0;
+  color: #2d3748;
+}
+
+.task-item .btn-cancel:hover {
+  background: #a0aec0;
+}

@@ -1,0 +1,76 @@
+/* Difference between PUT and PATCH request */
+
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Hide menu button on desktop */
+.menu-btn {
+  display: none;
+}
+
+/* Layout */
+main {
+  display: flex;
+}
+
+.content {
+  flex: 3;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  background: #ddd;
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* Show menu button */
+  .menu-btn {
+    display: block;
+    background: none;
+    color: white;
+    font-size: 24px;
+    border: none;
+  }
+
+  /* Hide navigation initially */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #444;
+  }
+
+  .nav a {
+    padding: 10px;
+    display: block;
+  }
+
+  /* Stack layout */
+  main {
+    flex-direction: column;
+  }
+}
