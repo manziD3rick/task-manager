@@ -124,7 +124,7 @@ function SignupPage({ onSwitch }) {
           />
           <button
             type="submit"
-            className="bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 font-medium"
+            className="bg-blue-600 text-white py-2 rounded-lg hover:bg-green-700 font-medium"
           >
             Sign Up
           </button>
