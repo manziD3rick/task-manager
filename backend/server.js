@@ -2,22 +2,28 @@ import express from 'express';
 import cors from 'cors';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
+import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import authRouter from './routes/auth.js';
 import tasksRouter from './routes/tasks.js';
 import reportRouter from './routes/report.js';
 
-const app = express();
-const PORT = 3001;
+dotenv.config();
 
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+const app = express();
+const PORT = process.env.PORT || 3001;
+const SESSION_SECRET = process.env.SESSION_SECRET || 'default_secret';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/task-manager';
+const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:5173';
+
+app.use(cors({ origin: CORS_ORIGIN, credentials: true }));
 app.use(express.json());
 app.use(
   session({
-    secret: 'task-manager-secret',
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/task-manager' }),
+    store: MongoStore.create({ mongoUrl: MONGODB_URI }),
     cookie: { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 },
   })
 );
